@@ -1,5 +1,5 @@
 /* eslint-disable */
-const { expect } = require('chai');
+const expect = require('chai').expect;
 
 const TDDDetector = require('../src/tdd-detector');
 const githubMock = require('./mock/github-mock');
