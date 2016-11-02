@@ -25,7 +25,7 @@ To install this package, run `npm install --save tdd-detector` [and obtain an Gi
 
 ```js
 const TDDDetector = require('tdd-detector'),
-      tddDetector = new TDDDetector('7fb073s72bh72663y5ddh129m12e598d');
+const tddDetector = new TDDDetector('7fb073s72bh72663y5ddh129m12e598d');
 ```
 
 ### Checking if TDD is used from a list of commits
