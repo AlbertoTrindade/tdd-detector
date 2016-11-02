@@ -40,10 +40,10 @@ const commits = ['59f5f9c484164fc394cd5d34485ad7f4c37bc21e', '63d6fe90f434533b5a
 tddDetector.isTDDUsed(projectAuthor, projectName, language, commits)
   .then(result => {
     if (result) {
-      console.log("TDD was used!");
+      console.log('TDD was used!');
     }
     else {
-      console.log("TDD was not used!");
+      console.log('TDD was not used!');
     }
   });
 ```
