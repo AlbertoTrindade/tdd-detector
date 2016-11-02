@@ -1,0 +1,101 @@
+{
+  "sha": "63d6fe90f434533b5a52edcd93d9786b8c1834e8",
+  "commit": {
+    "author": {
+      "name": "johnlenz",
+      "email": "johnlenz@google.com",
+      "date": "2015-01-06T19:07:24Z"
+    },
+    "committer": {
+      "name": "Dimitris Vardoulakis",
+      "email": "dimvar@google.com",
+      "date": "2015-01-06T19:42:29Z"
+    },
+    "message": "Make it possible to suppress constant by convention const-ness warnings.\n-------------\nCreated by MOE: http://code.google.com/p/moe-java\nMOE_MIGRATED_REVID=83356516",
+    "tree": {
+      "sha": "1503f6ff06196ba16869f69711004076472d69e6",
+      "url": "https://api.github.com/repos/google/closure-compiler/git/trees/1503f6ff06196ba16869f69711004076472d69e6"
+    },
+    "url": "https://api.github.com/repos/google/closure-compiler/git/commits/63d6fe90f434533b5a52edcd93d9786b8c1834e8",
+    "comment_count": 0
+  },
+  "url": "https://api.github.com/repos/google/closure-compiler/commits/63d6fe90f434533b5a52edcd93d9786b8c1834e8",
+  "html_url": "https://github.com/google/closure-compiler/commit/63d6fe90f434533b5a52edcd93d9786b8c1834e8",
+  "comments_url": "https://api.github.com/repos/google/closure-compiler/commits/63d6fe90f434533b5a52edcd93d9786b8c1834e8/comments",
+  "author": {
+    "login": "concavelenz",
+    "id": 1245994,
+    "avatar_url": "https://avatars.githubusercontent.com/u/1245994?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/concavelenz",
+    "html_url": "https://github.com/concavelenz",
+    "followers_url": "https://api.github.com/users/concavelenz/followers",
+    "following_url": "https://api.github.com/users/concavelenz/following{/other_user}",
+    "gists_url": "https://api.github.com/users/concavelenz/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/concavelenz/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/concavelenz/subscriptions",
+    "organizations_url": "https://api.github.com/users/concavelenz/orgs",
+    "repos_url": "https://api.github.com/users/concavelenz/repos",
+    "events_url": "https://api.github.com/users/concavelenz/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/concavelenz/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "dimvar",
+    "id": 286890,
+    "avatar_url": "https://avatars.githubusercontent.com/u/286890?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/dimvar",
+    "html_url": "https://github.com/dimvar",
+    "followers_url": "https://api.github.com/users/dimvar/followers",
+    "following_url": "https://api.github.com/users/dimvar/following{/other_user}",
+    "gists_url": "https://api.github.com/users/dimvar/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/dimvar/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/dimvar/subscriptions",
+    "organizations_url": "https://api.github.com/users/dimvar/orgs",
+    "repos_url": "https://api.github.com/users/dimvar/repos",
+    "events_url": "https://api.github.com/users/dimvar/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/dimvar/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "6b158f92af743c0a89e9b343af9fe95c08d31bef",
+      "url": "https://api.github.com/repos/google/closure-compiler/commits/6b158f92af743c0a89e9b343af9fe95c08d31bef",
+      "html_url": "https://github.com/google/closure-compiler/commit/6b158f92af743c0a89e9b343af9fe95c08d31bef"
+    }
+  ],
+  "stats": {
+    "total": 17,
+    "additions": 17,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "9427f1475331fcf0bd14b6853b97c6cc8d0eaa9a",
+      "filename": "src/com/google/javascript/jscomp/CheckAccessControls.java",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 0,
+      "changes": 5,
+      "blob_url": "https://github.com/google/closure-compiler/blob/63d6fe90f434533b5a52edcd93d9786b8c1834e8/src/com/google/javascript/jscomp/CheckAccessControls.java",
+      "raw_url": "https://github.com/google/closure-compiler/raw/63d6fe90f434533b5a52edcd93d9786b8c1834e8/src/com/google/javascript/jscomp/CheckAccessControls.java",
+      "contents_url": "https://api.github.com/repos/google/closure-compiler/contents/src/com/google/javascript/jscomp/CheckAccessControls.java?ref=63d6fe90f434533b5a52edcd93d9786b8c1834e8",
+      "patch": "@@ -575,6 +575,11 @@ private void checkConstantProperty(NodeTraversal t,\n \n     // Check whether constant properties are reassigned\n     if (isConstant) {\n+      JSDocInfo info = parent.getJSDocInfo();\n+      if (info != null && info.getSuppressions().contains(\"const\")) {\n+        return;\n+      }\n+\n       if (isDelete) {\n         compiler.report(\n             t.makeError(getprop, CONST_PROPERTY_DELETED, propertyName));"
+    },
+    {
+      "sha": "775325c382efab1b6a2b5b0ef9b064433ae9169f",
+      "filename": "test/com/google/javascript/jscomp/CheckAccessControlsTest.java",
+      "status": "modified",
+      "additions": 12,
+      "deletions": 0,
+      "changes": 12,
+      "blob_url": "https://github.com/google/closure-compiler/blob/63d6fe90f434533b5a52edcd93d9786b8c1834e8/test/com/google/javascript/jscomp/CheckAccessControlsTest.java",
+      "raw_url": "https://github.com/google/closure-compiler/raw/63d6fe90f434533b5a52edcd93d9786b8c1834e8/test/com/google/javascript/jscomp/CheckAccessControlsTest.java",
+      "contents_url": "https://api.github.com/repos/google/closure-compiler/contents/test/com/google/javascript/jscomp/CheckAccessControlsTest.java?ref=63d6fe90f434533b5a52edcd93d9786b8c1834e8",
+      "patch": "@@ -1493,6 +1493,18 @@ public void testConstantProperty2b() {\n         null , CONST_PROPERTY_REASSIGNED_VALUE);\n   }\n \n+  public void testConstantProperty3a() {\n+    testSame(\"/** @constructor */ function Foo() {}\\n\" +\n+        \"/** @type {number} */ Foo.prototype.PROP = 2;\\n\" +\n+        \"/** @suppress {duplicate|const} */ Foo.prototype.PROP = 3;\\n\");\n+  }\n+\n+  public void testConstantProperty3b() {\n+    testSame(\"/** @constructor */ function Foo() {}\\n\" +\n+        \"/** @const */ Foo.prototype.prop = 2;\\n\" +\n+        \"/** @suppress {const} */ Foo.prototype.prop = 3;\\n\");\n+  }\n+\n   public void testNamespaceConstantProperty1() {\n     test(\"\" +\n         \"/** @const */ var o = {};\\n\" +"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "tdd-detector",
+  "version": "1.0.0",
+  "description": "A module that detects TDD usage from commits in Java and Ruby projects",
+  "main": "src/tdd-detector.js",
+  "scripts": {
+    "test": "mocha",
+    "test:watch": "mocha -w",
+    "lint": "eslint **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertoTrindade/tdd-detector.git"
+  },
+  "keywords": [
+    "TDD"
+  ],
+  "author": "Alberto Trindade Tavares",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlbertoTrindade/tdd-detector/issues"
+  },
+  "homepage": "https://github.com/AlbertoTrindade/tdd-detector#readme",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.6.1",
+    "eslint-plugin-jsx-a11y": "^1.0.4",
+    "eslint-plugin-react": "^5.0.1",
+    "mocha": "2.5.3",
+    "nock": "^9.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^2.0.0",
+    "github-api": "^2.3.0",
+    "stem-porter": "0.0.1"
+  }
+}

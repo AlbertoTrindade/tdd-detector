@@ -1,0 +1,89 @@
+{
+  "sha": "59f5f9c484164fc394cd5d34485ad7f4c37bc21e",
+  "commit": {
+    "author": {
+      "name": "tbreisacher",
+      "email": "tbreisacher@google.com",
+      "date": "2015-01-06T19:08:39Z"
+    },
+    "committer": {
+      "name": "Dimitris Vardoulakis",
+      "email": "dimvar@google.com",
+      "date": "2015-01-06T19:42:35Z"
+    },
+    "message": "Small fixes in new type inference error messages:\n\n- Remove extra space that causes things not to align correctly.\n- Include the name of the function being referred to, if possible.\n-------------\nCreated by MOE: http://code.google.com/p/moe-java\nMOE_MIGRATED_REVID=83356639",
+    "tree": {
+      "sha": "5a6692ed53136239e17f8ba635b4479c29a3b8a1",
+      "url": "https://api.github.com/repos/google/closure-compiler/git/trees/5a6692ed53136239e17f8ba635b4479c29a3b8a1"
+    },
+    "url": "https://api.github.com/repos/google/closure-compiler/git/commits/59f5f9c484164fc394cd5d34485ad7f4c37bc21e",
+    "comment_count": 0
+  },
+  "url": "https://api.github.com/repos/google/closure-compiler/commits/59f5f9c484164fc394cd5d34485ad7f4c37bc21e",
+  "html_url": "https://github.com/google/closure-compiler/commit/59f5f9c484164fc394cd5d34485ad7f4c37bc21e",
+  "comments_url": "https://api.github.com/repos/google/closure-compiler/commits/59f5f9c484164fc394cd5d34485ad7f4c37bc21e/comments",
+  "author": {
+    "login": "MatrixFrog",
+    "id": 244381,
+    "avatar_url": "https://avatars.githubusercontent.com/u/244381?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/MatrixFrog",
+    "html_url": "https://github.com/MatrixFrog",
+    "followers_url": "https://api.github.com/users/MatrixFrog/followers",
+    "following_url": "https://api.github.com/users/MatrixFrog/following{/other_user}",
+    "gists_url": "https://api.github.com/users/MatrixFrog/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/MatrixFrog/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/MatrixFrog/subscriptions",
+    "organizations_url": "https://api.github.com/users/MatrixFrog/orgs",
+    "repos_url": "https://api.github.com/users/MatrixFrog/repos",
+    "events_url": "https://api.github.com/users/MatrixFrog/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/MatrixFrog/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "dimvar",
+    "id": 286890,
+    "avatar_url": "https://avatars.githubusercontent.com/u/286890?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/dimvar",
+    "html_url": "https://github.com/dimvar",
+    "followers_url": "https://api.github.com/users/dimvar/followers",
+    "following_url": "https://api.github.com/users/dimvar/following{/other_user}",
+    "gists_url": "https://api.github.com/users/dimvar/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/dimvar/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/dimvar/subscriptions",
+    "organizations_url": "https://api.github.com/users/dimvar/orgs",
+    "repos_url": "https://api.github.com/users/dimvar/repos",
+    "events_url": "https://api.github.com/users/dimvar/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/dimvar/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "63d6fe90f434533b5a52edcd93d9786b8c1834e8",
+      "url": "https://api.github.com/repos/google/closure-compiler/commits/63d6fe90f434533b5a52edcd93d9786b8c1834e8",
+      "html_url": "https://github.com/google/closure-compiler/commit/63d6fe90f434533b5a52edcd93d9786b8c1834e8"
+    }
+  ],
+  "stats": {
+    "total": 11,
+    "additions": 6,
+    "deletions": 5
+  },
+  "files": [
+    {
+      "sha": "c15a2022cfb252cce295b003c2e7ce2ae2a2191c",
+      "filename": "src/com/google/javascript/jscomp/NewTypeInference.java",
+      "status": "modified",
+      "additions": 6,
+      "deletions": 5,
+      "changes": 11,
+      "blob_url": "https://github.com/google/closure-compiler/blob/59f5f9c484164fc394cd5d34485ad7f4c37bc21e/src/com/google/javascript/jscomp/NewTypeInference.java",
+      "raw_url": "https://github.com/google/closure-compiler/raw/59f5f9c484164fc394cd5d34485ad7f4c37bc21e/src/com/google/javascript/jscomp/NewTypeInference.java",
+      "contents_url": "https://api.github.com/repos/google/closure-compiler/contents/src/com/google/javascript/jscomp/NewTypeInference.java?ref=59f5f9c484164fc394cd5d34485ad7f4c37bc21e",
+      "patch": "@@ -81,27 +81,27 @@\n \n   static final DiagnosticType RETURN_NONDECLARED_TYPE = DiagnosticType.warning(\n       \"JSC_RETURN_NONDECLARED_TYPE\",\n-      \"Returned type does not match declared return type.\\n \" +\n+      \"Returned type does not match declared return type.\\n\" +\n       \"declared : {0}\\n\" +\n       \"found    : {1}\\n\");\n \n   static final DiagnosticType INVALID_INFERRED_RETURN_TYPE =\n       DiagnosticType.warning(\n           \"JSC_INVALID_INFERRED_RETURN_TYPE\",\n-          \"Function called in context that expects incompatible type.\\n \" +\n+          \"Function called in context that expects incompatible type.\\n\" +\n           \"expected : {0}\\n\" +\n           \"found    : {1}\\n\");\n \n   static final DiagnosticType INVALID_ARGUMENT_TYPE = DiagnosticType.warning(\n       \"JSC_INVALID_ARGUMENT_TYPE\",\n-      \"Invalid type for parameter {0} of function {1}.\\n \" +\n+      \"Invalid type for parameter {0} of function {1}.\\n\" +\n       \"expected : {2}\\n\" +\n       \"found    : {3}\\n\");\n \n   static final DiagnosticType CROSS_SCOPE_GOTCHA = DiagnosticType.warning(\n       \"JSC_CROSS_SCOPE_GOTCHA\",\n       \"You thought we weren't going to notice? Guess again.\\n\" +\n-      \"Variable {0} typed inconsistently across scopes.\\n \" +\n+      \"Variable {0} typed inconsistently across scopes.\\n\" +\n       \"In outer scope : {1}\\n\" +\n       \"In inner scope : {2}\\n\");\n \n@@ -1766,8 +1766,9 @@ private TypeEnv analyzeCallNodeArgumentsFwd(Node call, Node firstArg,\n       if (funType.isOptionalArg(i) && pair.type.equals(JSType.UNDEFINED)) {\n         argTypeForDeferredCheck = null; // No deferred check needed.\n       } else if (!pair.type.isSubtypeOf(formalType)) {\n+        String fnName = getReadableCalleeName(call.getFirstChild());\n         warnings.add(JSError.make(arg, INVALID_ARGUMENT_TYPE,\n-                Integer.toString(i + 1), \"\",\n+                Integer.toString(i + 1), fnName,\n                 formalType.toString(), pair.type.toString()));\n         argTypeForDeferredCheck = null; // No deferred check needed.\n       }"
+    }
+  ]
+}

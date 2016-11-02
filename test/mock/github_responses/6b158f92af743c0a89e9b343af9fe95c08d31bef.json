@@ -1,0 +1,106 @@
+{
+  "sha": "6b158f92af743c0a89e9b343af9fe95c08d31bef",
+  "commit": {
+    "author": {
+      "name": "Nick Santos",
+      "email": "nicholas.j.santos@gmail.com",
+      "date": "2015-01-06T03:49:41Z"
+    },
+    "committer": {
+      "name": "Nick Santos",
+      "email": "nicholas.j.santos@gmail.com",
+      "date": "2015-01-06T03:49:41Z"
+    },
+    "message": "Merge pull request #770 from sayrer/fix_non_relative_index_js_resolution\n\nFix index.js resolution for non-relative require invocations.",
+    "tree": {
+      "sha": "31c787c6aaf11e73420845753a8ffa3e7f9d0a94",
+      "url": "https://api.github.com/repos/google/closure-compiler/git/trees/31c787c6aaf11e73420845753a8ffa3e7f9d0a94"
+    },
+    "url": "https://api.github.com/repos/google/closure-compiler/git/commits/6b158f92af743c0a89e9b343af9fe95c08d31bef",
+    "comment_count": 0
+  },
+  "url": "https://api.github.com/repos/google/closure-compiler/commits/6b158f92af743c0a89e9b343af9fe95c08d31bef",
+  "html_url": "https://github.com/google/closure-compiler/commit/6b158f92af743c0a89e9b343af9fe95c08d31bef",
+  "comments_url": "https://api.github.com/repos/google/closure-compiler/commits/6b158f92af743c0a89e9b343af9fe95c08d31bef/comments",
+  "author": {
+    "login": "nicks",
+    "id": 278641,
+    "avatar_url": "https://avatars.githubusercontent.com/u/278641?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/nicks",
+    "html_url": "https://github.com/nicks",
+    "followers_url": "https://api.github.com/users/nicks/followers",
+    "following_url": "https://api.github.com/users/nicks/following{/other_user}",
+    "gists_url": "https://api.github.com/users/nicks/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/nicks/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/nicks/subscriptions",
+    "organizations_url": "https://api.github.com/users/nicks/orgs",
+    "repos_url": "https://api.github.com/users/nicks/repos",
+    "events_url": "https://api.github.com/users/nicks/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/nicks/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "nicks",
+    "id": 278641,
+    "avatar_url": "https://avatars.githubusercontent.com/u/278641?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/nicks",
+    "html_url": "https://github.com/nicks",
+    "followers_url": "https://api.github.com/users/nicks/followers",
+    "following_url": "https://api.github.com/users/nicks/following{/other_user}",
+    "gists_url": "https://api.github.com/users/nicks/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/nicks/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/nicks/subscriptions",
+    "organizations_url": "https://api.github.com/users/nicks/orgs",
+    "repos_url": "https://api.github.com/users/nicks/repos",
+    "events_url": "https://api.github.com/users/nicks/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/nicks/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "813293c2bdf2fc230cac9371af92c5def4fb4514",
+      "url": "https://api.github.com/repos/google/closure-compiler/commits/813293c2bdf2fc230cac9371af92c5def4fb4514",
+      "html_url": "https://github.com/google/closure-compiler/commit/813293c2bdf2fc230cac9371af92c5def4fb4514"
+    },
+    {
+      "sha": "23511802f5ba10fe9605d256e1aaa722a8a5b1e5",
+      "url": "https://api.github.com/repos/google/closure-compiler/commits/23511802f5ba10fe9605d256e1aaa722a8a5b1e5",
+      "html_url": "https://github.com/google/closure-compiler/commit/23511802f5ba10fe9605d256e1aaa722a8a5b1e5"
+    }
+  ],
+  "stats": {
+    "total": 12,
+    "additions": 6,
+    "deletions": 6
+  },
+  "files": [
+    {
+      "sha": "3d1875972411865f84b10dea6ee7752a9a82ce32",
+      "filename": "src/com/google/javascript/jscomp/ES6ModuleLoader.java",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 6,
+      "changes": 11,
+      "blob_url": "https://github.com/google/closure-compiler/blob/6b158f92af743c0a89e9b343af9fe95c08d31bef/src/com/google/javascript/jscomp/ES6ModuleLoader.java",
+      "raw_url": "https://github.com/google/closure-compiler/raw/6b158f92af743c0a89e9b343af9fe95c08d31bef/src/com/google/javascript/jscomp/ES6ModuleLoader.java",
+      "contents_url": "https://api.github.com/repos/google/closure-compiler/contents/src/com/google/javascript/jscomp/ES6ModuleLoader.java?ref=6b158f92af743c0a89e9b343af9fe95c08d31bef",
+      "patch": "@@ -107,7 +107,7 @@ static ES6ModuleLoader createNaiveLoader(\n \n     private NaiveModuleLoader(AbstractCompiler compiler, String moduleRoot) {\n       this.moduleRoot = moduleRoot;\n-      this.moduleRootURI = new File(moduleRoot).toURI();\n+      this.moduleRootURI = createUri(moduleRoot);\n \n       // Precompute the module name of each source file.\n       for (CompilerInput input : compiler.getInputsInOrder()) {\n@@ -117,11 +117,10 @@ private NaiveModuleLoader(AbstractCompiler compiler, String moduleRoot) {\n \n     @Override\n     String locate(String name, CompilerInput referrer) {\n-      if (isRelativeIdentifier(name)) {\n-        return convertSourceUriToModuleAddress(\n-            createUri(referrer).resolve(createUri(name)));\n-      }\n-      return createUri(name).normalize().toString();\n+      URI base = isRelativeIdentifier(name) ? createUri(referrer)\n+          : moduleRootURI;\n+\n+      return convertSourceUriToModuleAddress(base.resolve(createUri(name)));\n     }\n \n     @Override"
+    },
+    {
+      "sha": "74e41b6fb6d5b2805c2f98579ab662f052aa8ffb",
+      "filename": "test/com/google/javascript/jscomp/ES6ModuleLoaderFileSystemTest.java",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 0,
+      "changes": 1,
+      "blob_url": "https://github.com/google/closure-compiler/blob/6b158f92af743c0a89e9b343af9fe95c08d31bef/test/com/google/javascript/jscomp/ES6ModuleLoaderFileSystemTest.java",
+      "raw_url": "https://github.com/google/closure-compiler/raw/6b158f92af743c0a89e9b343af9fe95c08d31bef/test/com/google/javascript/jscomp/ES6ModuleLoaderFileSystemTest.java",
+      "contents_url": "https://api.github.com/repos/google/closure-compiler/contents/test/com/google/javascript/jscomp/ES6ModuleLoaderFileSystemTest.java?ref=6b158f92af743c0a89e9b343af9fe95c08d31bef",
+      "patch": "@@ -96,5 +96,6 @@ public void testFileSystem() {\n     Assert.assertEquals(\"A/index.js\", loader.getLoadAddress(inputA));\n     Assert.assertEquals(\"A/index.js\", loader.locate(\"../A\", inputB));\n     Assert.assertEquals(\"A/index.js\", loader.locate(\"./A\", inputApp));\n+    Assert.assertEquals(\"A/index.js\", loader.locate(\"A\", inputApp));\n   }\n }"
+    }
+  ]
+}
