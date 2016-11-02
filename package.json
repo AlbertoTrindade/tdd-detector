@@ -32,7 +32,6 @@
     "nock": "^9.0.2"
   },
   "dependencies": {
-    "dotenv": "^2.0.0",
     "github-api": "^2.3.0",
     "stem-porter": "0.0.1"
   }
