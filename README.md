@@ -1,6 +1,6 @@
 # Test Driven Development (TDD) Detector
 
-[![Build Status](https://travis-ci.org/simkimsia/UtilityBehaviors.png)](https://travis-ci.org/simkimsia/UtilityBehaviors)
+[![build status](https://api.travis-ci.org/AlbertoTrindade/tdd-detector.svg?branch=master)](https://travis-ci.org/AlbertoTrindade/tdd-detector)
 [![npm version](https://badge.fury.io/js/tdd-detector.svg)](http://badge.fury.io/js/tdd-detector)
 
 This module detects evidences of TDD usage from a list of commits (SHA1 Hash reference) from Java and Ruby projects. 
