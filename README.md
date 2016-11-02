@@ -24,8 +24,8 @@ The detections is based on the following naming convetions, which associate unit
 To install this package, run `npm install --save tdd-detector` [and obtain an GitHub API key](https://github.com/blog/1509-personal-api-tokens). Once you got your key, you can instantiate an TDD Detector client in your code:
 
 ```js
-const TDDDetector = require('tdd-detector'),
-      tddDetector = new TDDDetector('7fb073s72bh72663y5ddh129m12e598d');
+const TDDDetector = require('tdd-detector');
+const tddDetector = new TDDDetector('7fb073s72bh72663y5ddh129m12e598d');
 ```
 
 ### Checking if TDD is used from a list of commits
