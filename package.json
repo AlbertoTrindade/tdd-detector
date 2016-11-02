@@ -1,6 +1,6 @@
 {
   "name": "tdd-detector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A module that detects TDD usage from commits in Java and Ruby projects",
   "main": "src/tdd-detector.js",
   "scripts": {
