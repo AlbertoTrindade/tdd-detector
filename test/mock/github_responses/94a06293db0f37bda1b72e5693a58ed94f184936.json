@@ -1,0 +1,89 @@
+{
+  "sha": "94a06293db0f37bda1b72e5693a58ed94f184936",
+  "commit": {
+    "author": {
+      "name": "Adam Hunter",
+      "email": "adamhunter@me.com",
+      "date": "2013-04-11T20:00:17Z"
+    },
+    "committer": {
+      "name": "Adam Hunter",
+      "email": "adamhunter@me.com",
+      "date": "2013-04-11T20:00:17Z"
+    },
+    "message": "checking instance variable for presence instead of getter",
+    "tree": {
+      "sha": "10db9d5c63319b005d311359104089ba495b16c8",
+      "url": "https://api.github.com/repos/nathanl/searchlight/git/trees/10db9d5c63319b005d311359104089ba495b16c8"
+    },
+    "url": "https://api.github.com/repos/nathanl/searchlight/git/commits/94a06293db0f37bda1b72e5693a58ed94f184936",
+    "comment_count": 0
+  },
+  "url": "https://api.github.com/repos/nathanl/searchlight/commits/94a06293db0f37bda1b72e5693a58ed94f184936",
+  "html_url": "https://github.com/nathanl/searchlight/commit/94a06293db0f37bda1b72e5693a58ed94f184936",
+  "comments_url": "https://api.github.com/repos/nathanl/searchlight/commits/94a06293db0f37bda1b72e5693a58ed94f184936/comments",
+  "author": {
+    "login": "adamhunter",
+    "id": 65676,
+    "avatar_url": "https://avatars.githubusercontent.com/u/65676?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/adamhunter",
+    "html_url": "https://github.com/adamhunter",
+    "followers_url": "https://api.github.com/users/adamhunter/followers",
+    "following_url": "https://api.github.com/users/adamhunter/following{/other_user}",
+    "gists_url": "https://api.github.com/users/adamhunter/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/adamhunter/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/adamhunter/subscriptions",
+    "organizations_url": "https://api.github.com/users/adamhunter/orgs",
+    "repos_url": "https://api.github.com/users/adamhunter/repos",
+    "events_url": "https://api.github.com/users/adamhunter/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/adamhunter/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "adamhunter",
+    "id": 65676,
+    "avatar_url": "https://avatars.githubusercontent.com/u/65676?v=3",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/adamhunter",
+    "html_url": "https://github.com/adamhunter",
+    "followers_url": "https://api.github.com/users/adamhunter/followers",
+    "following_url": "https://api.github.com/users/adamhunter/following{/other_user}",
+    "gists_url": "https://api.github.com/users/adamhunter/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/adamhunter/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/adamhunter/subscriptions",
+    "organizations_url": "https://api.github.com/users/adamhunter/orgs",
+    "repos_url": "https://api.github.com/users/adamhunter/repos",
+    "events_url": "https://api.github.com/users/adamhunter/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/adamhunter/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "b106e3c5f87f976617ac2c5efbad9a8f78800382",
+      "url": "https://api.github.com/repos/nathanl/searchlight/commits/b106e3c5f87f976617ac2c5efbad9a8f78800382",
+      "html_url": "https://github.com/nathanl/searchlight/commit/b106e3c5f87f976617ac2c5efbad9a8f78800382"
+    }
+  ],
+  "stats": {
+    "total": 2,
+    "additions": 1,
+    "deletions": 1
+  },
+  "files": [
+    {
+      "sha": "7acaeb8faf159d20b540ea7bdfeae917a7341f79",
+      "filename": "lib/searchlight/search.rb",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/nathanl/searchlight/blob/94a06293db0f37bda1b72e5693a58ed94f184936/lib/searchlight/search.rb",
+      "raw_url": "https://github.com/nathanl/searchlight/raw/94a06293db0f37bda1b72e5693a58ed94f184936/lib/searchlight/search.rb",
+      "contents_url": "https://api.github.com/repos/nathanl/searchlight/contents/lib/searchlight/search.rb?ref=94a06293db0f37bda1b72e5693a58ed94f184936",
+      "patch": "@@ -37,7 +37,7 @@ def run\n     end\n \n     def run_search_method(method_name)\n-      option_value = public_send(method_name.sub(/\\Asearch_/, ''))\n+      option_value = instance_variable_get(\"@#{method_name.sub(/\\Asearch_/, '')}\")\n       option_value = option_value.reject { |item| blank_value?(item) } if option_value.respond_to?(:reject)\n       public_send(method_name) unless blank_value?(option_value)\n     end"
+    }
+  ]
+}

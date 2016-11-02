@@ -1,0 +1,53 @@
+{
+  "sha": "04e3541e39312eef8ac71cf2476ba8feb2d4b88b",
+  "commit": {
+    "author": {
+      "name": "Nathan Long",
+      "email": "nathan.long@tma1.com",
+      "date": "2013-04-10T12:55:03Z"
+    },
+    "committer": {
+      "name": "Nathan Long",
+      "email": "nathan.long@tma1.com",
+      "date": "2013-04-10T12:55:03Z"
+    },
+    "message": "Fix text - rbx-19 has different order for public methods",
+    "tree": {
+      "sha": "62b3bc4ace362cb9599f2c9f66811da665503a37",
+      "url": "https://api.github.com/repos/nathanl/searchlight/git/trees/62b3bc4ace362cb9599f2c9f66811da665503a37"
+    },
+    "url": "https://api.github.com/repos/nathanl/searchlight/git/commits/04e3541e39312eef8ac71cf2476ba8feb2d4b88b",
+    "comment_count": 0
+  },
+  "url": "https://api.github.com/repos/nathanl/searchlight/commits/04e3541e39312eef8ac71cf2476ba8feb2d4b88b",
+  "html_url": "https://github.com/nathanl/searchlight/commit/04e3541e39312eef8ac71cf2476ba8feb2d4b88b",
+  "comments_url": "https://api.github.com/repos/nathanl/searchlight/commits/04e3541e39312eef8ac71cf2476ba8feb2d4b88b/comments",
+  "author": null,
+  "committer": null,
+  "parents": [
+    {
+      "sha": "6dcfd7881da3f34cd8f19be5c4c8062311e18edd",
+      "url": "https://api.github.com/repos/nathanl/searchlight/commits/6dcfd7881da3f34cd8f19be5c4c8062311e18edd",
+      "html_url": "https://github.com/nathanl/searchlight/commit/6dcfd7881da3f34cd8f19be5c4c8062311e18edd"
+    }
+  ],
+  "stats": {
+    "total": 2,
+    "additions": 1,
+    "deletions": 1
+  },
+  "files": [
+    {
+      "sha": "086a8cc9a20072ae839ac1e5bb25fee5f6325529",
+      "filename": "spec/searchlight/search_spec.rb",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/nathanl/searchlight/blob/04e3541e39312eef8ac71cf2476ba8feb2d4b88b/spec/searchlight/search_spec.rb",
+      "raw_url": "https://github.com/nathanl/searchlight/raw/04e3541e39312eef8ac71cf2476ba8feb2d4b88b/spec/searchlight/search_spec.rb",
+      "contents_url": "https://api.github.com/repos/nathanl/searchlight/contents/spec/searchlight/search_spec.rb?ref=04e3541e39312eef8ac71cf2476ba8feb2d4b88b",
+      "patch": "@@ -59,7 +59,7 @@ def search_bees\n     }\n \n     it \"keeps a unique list of the search methods\" do\n-      expect(search.send(:search_methods)).to eq(['search_bees', 'search_bats'])\n+      expect(search.send(:search_methods).map(&:to_s).sort).to eq(['search_bats', 'search_bees'])\n     end\n \n   end"
+    }
+  ]
+}
