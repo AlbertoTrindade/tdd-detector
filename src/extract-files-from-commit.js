@@ -4,7 +4,7 @@ function isJavaFile(filename) {
   return filename.endsWith(javaExtension);
 }
 
-function isRubyile(filename) {
+function isRubyFile(filename) {
   const rubyExtension = '.rb';
 
   return filename.endsWith(rubyExtension);
@@ -26,7 +26,7 @@ function separateProductionTestFiles(commit) {
   files.forEach(file => {
     const filename = file.filename;
 
-    if (isJavaFile(filename) || isRubyile(filename)) {
+    if (isJavaFile(filename) || isRubyFile(filename)) {
       if (isTestFile(filename)) {
         testFiles.push(filename);
       } else {
