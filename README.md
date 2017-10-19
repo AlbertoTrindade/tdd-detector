@@ -29,7 +29,7 @@ const tddDetector = new TDDDetector('7fb073s72bh72663y5ddh129m12e598d');
 ```
 
 ### Checking if TDD is used from a list of commits
-You just need to specify the author and name of the project, programming language used and the list of SHA1 Hash for commits:
+You just need to specify the author and name of the project, programming language (`'java'` or `'ruby`') used and the list of SHA1 Hash for commits:
 
 ```js
 const projectAuthor = 'google';
