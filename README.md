@@ -21,7 +21,7 @@ The detection is based on the following naming conventions, which associate unit
 
 ## Usage
 ### Installation
-To install this package, run `npm install --save tdd-detector` [and obtain an GitHub API key](https://github.com/blog/1509-personal-api-tokens). Once you got your key, you can instantiate a TDD Detector client in your code:
+To install this package, run `npm install --save tdd-detector` [and obtain a GitHub API key](https://github.com/blog/1509-personal-api-tokens). Once you got your key, you can instantiate a TDD Detector client in your code:
 
 ```js
 const TDDDetector = require('tdd-detector');
